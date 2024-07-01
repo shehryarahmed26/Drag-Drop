@@ -11,9 +11,15 @@ element.addEventListener('dragend', (e) => {
 boxes.forEach((box) => {
     box.addEventListener('dragover', (e) => {
         e.preventDefault();
+        e.target.className += ' green'
+    })
+    box.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        e.target.className = 'box'
     })
     box.addEventListener('drop', (e) => {
+        e.target.className = 'box'
         e.target.append(element)
-        console.log(e);
+        // console.log(e);
     })
 })
